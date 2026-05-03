@@ -1,3 +1,7 @@
+/* ===== GIXS — Main JavaScript ===== */
+(function () {
+    'use strict';
+
     /* --- i18n System --- */
     const translations = {
         en: {
@@ -80,22 +84,20 @@
         document.documentElement.lang = lang;
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const lang = btn.getAttribute('data-lang');
-                if (lang !== currentLang) {
-                    updateLanguage(lang);
-                    charIndex = 0;
-                    cmdIndex = 0;
-                }
-            });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = btn.getAttribute('data-lang');
+            if (lang !== currentLang) {
+                updateLanguage(lang);
+                charIndex = 0;
+                cmdIndex = 0;
+            }
         });
-
-        // Initial load
-        updateLanguage(currentLang);
     });
+
+    // Initial load
+    updateLanguage(currentLang);
 
     /* --- Cursor Glow --- */
     const glow = document.getElementById('cursor-glow');
