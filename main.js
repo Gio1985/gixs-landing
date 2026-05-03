@@ -1,6 +1,101 @@
-/* ===== GIXS — Main JavaScript ===== */
-(function () {
-    'use strict';
+    /* --- i18n System --- */
+    const translations = {
+        en: {
+            nav_status: 'Building in stealth',
+            hero_overline: 'STEALTH MODE',
+            hero_title_1: 'Engineering',
+            hero_title_2: 'the Invisible.',
+            hero_subtitle: 'We architect systems that power experiences people feel — but never see.',
+            hero_tag_1: 'Software Engineering',
+            hero_tag_2: 'Game Development',
+            hero_tag_3: 'Cloud Architecture',
+            phil_title_1: 'Precision Code',
+            phil_text_1: 'Scalable, maintainable systems engineered for the long run.',
+            phil_title_2: 'Immersive Worlds',
+            phil_text_2: 'Interactive experiences that blur the line between digital and tangible.',
+            phil_title_3: 'Cloud Native',
+            phil_text_3: 'Resilient architectures designed for zero downtime at any scale.',
+            signal_label: 'Transmission',
+            signal_quote: '"The best technology disappears. It becomes the medium through which extraordinary things happen."',
+            contact_title: 'Ready to build something?',
+            contact_subtitle: "We're selectively taking on projects that challenge the status quo.",
+            footer_copy: '© 2026 GIXS. All systems operational.'
+        },
+        es: {
+            nav_status: 'Construyendo en stealth',
+            hero_overline: 'MODO STEALTH',
+            hero_title_1: 'Ingeniería',
+            hero_title_2: 'de lo Invisible.',
+            hero_subtitle: 'Arquitectamos sistemas que potencian experiencias que la gente siente — pero nunca ve.',
+            hero_tag_1: 'Ingeniería de Software',
+            hero_tag_2: 'Desarrollo de Videojuegos',
+            hero_tag_3: 'Arquitectura Cloud',
+            phil_title_1: 'Código de Precisión',
+            phil_text_1: 'Sistemas escalables y mantenibles diseñados para el largo plazo.',
+            phil_title_2: 'Mundos Inmersivos',
+            phil_text_2: 'Experiencias interactivas que borran la línea entre lo digital y lo tangible.',
+            phil_title_3: 'Cloud Native',
+            phil_text_3: 'Arquitecturas resilientes diseñadas para cero tiempo de inactividad a cualquier escala.',
+            signal_label: 'Transmisión',
+            signal_quote: '"La mejor tecnología desaparece. Se convierte en el medio a través del cual suceden cosas extraordinarias."',
+            contact_title: '¿Listo para construir algo?',
+            contact_subtitle: 'Aceptamos selectivamente proyectos que desafían el status quo.',
+            footer_copy: '© 2026 GIXS. Todos los sistemas operativos.'
+        }
+    };
+
+    const commandsList = {
+        en: ['gixs init --stealth', 'deploying imagination...', 'npm run build:future', 'cloud.architect --scale=infinite', 'rendering new reality...'],
+        es: ['gixs init --stealth', 'desplegando imaginación...', 'npm run build:future', 'cloud.architect --scale=infinite', 'renderizando nueva realidad...']
+    };
+
+    let currentLang = 'en';
+    try {
+        currentLang = localStorage.getItem('gixs_lang') || 'en';
+    } catch (e) {
+        console.warn('Local storage is disabled or unavailable.');
+    }
+    
+    let commands = commandsList[currentLang];
+
+    function updateLanguage(lang) {
+        currentLang = lang;
+        try {
+            localStorage.setItem('gixs_lang', lang);
+        } catch (e) {}
+        
+        commands = commandsList[lang];
+        
+        document.querySelectorAll('[data-t]').forEach(el => {
+            const key = el.getAttribute('data-t');
+            if (translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+
+        document.documentElement.lang = lang;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = btn.getAttribute('data-lang');
+                if (lang !== currentLang) {
+                    updateLanguage(lang);
+                    charIndex = 0;
+                    cmdIndex = 0;
+                }
+            });
+        });
+
+        // Initial load
+        updateLanguage(currentLang);
+    });
 
     /* --- Cursor Glow --- */
     const glow = document.getElementById('cursor-glow');
@@ -94,13 +189,6 @@
     revealElements.forEach(el => revealObserver.observe(el));
 
     /* --- Terminal Typing Effect --- */
-    const commands = [
-        'gixs init --stealth',
-        'deploying imagination...',
-        'npm run build:future',
-        'cloud.architect --scale=infinite',
-        'rendering new reality...',
-    ];
     const terminalText = document.querySelector('.terminal-text');
     let cmdIndex = 0, charIndex = 0, isDeleting = false;
 
@@ -156,4 +244,5 @@
         });
     });
 
+    // Cleanup complete
 })();

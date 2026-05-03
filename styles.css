@@ -131,6 +131,44 @@ body {
     letter-spacing: 0.05em;
 }
 
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border-right: 1px solid var(--border);
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+}
+
+.lang-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-btn.active {
+    color: var(--accent);
+    background: var(--accent-dim);
+}
+
+.lang-divider {
+    color: var(--border);
+    font-size: 0.6rem;
+    pointer-events: none;
+}
+
 @keyframes pulse {
     0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--accent-glow); }
     50% { opacity: 0.6; box-shadow: 0 0 0 6px transparent; }
