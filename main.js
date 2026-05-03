@@ -20,7 +20,7 @@
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
-    const PARTICLE_COUNT = 50;
+    const PARTICLE_COUNT = window.innerWidth < 768 ? 20 : 50;
 
     function resize() {
         canvas.width = window.innerWidth;

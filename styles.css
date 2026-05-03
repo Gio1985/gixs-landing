@@ -45,7 +45,7 @@ body {
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(167, 139, 250, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.15) 0%, rgba(167, 139, 250, 0.05) 35%, transparent 70%);
     pointer-events: none;
     transform: translate(-50%, -50%);
     z-index: 0;
@@ -254,7 +254,9 @@ body {
 }
 
 .philosophy-card {
-    background: var(--bg-card);
+    background: rgba(22, 22, 30, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 2.5rem 2rem;
@@ -534,6 +536,9 @@ body {
 }
 
 @media (max-width: 480px) {
-    .hero-title { font-size: 2.2rem; }
+    .hero-title { font-size: clamp(2.2rem, 10vw, 2.8rem); }
     .status-text { display: none; }
+    .hero-subtitle { font-size: 0.95rem; padding: 0 0.5rem; }
+    .contact-title { font-size: 2rem; }
+    .terminal-body { font-size: 0.75rem; padding: 1rem; }
 }
