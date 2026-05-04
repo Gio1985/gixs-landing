@@ -164,8 +164,8 @@
 
     function frame() {
         context.clearRect(0, 0, width, height);
-        context.strokeStyle = "rgba(125,249,255,0.055)";
-        context.fillStyle = "rgba(248,251,255,0.38)";
+        context.strokeStyle = "rgba(15,111,88,0.07)";
+        context.fillStyle = "rgba(18,25,29,0.18)";
 
         points.forEach(function (point, index) {
             point.x += point.vx;
