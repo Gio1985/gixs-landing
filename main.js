@@ -1,250 +1,205 @@
-/* ===== GIXS — Main JavaScript ===== */
 (function () {
-    'use strict';
+    "use strict";
 
-    /* --- i18n System --- */
-    const translations = {
-        en: {
-            nav_status: 'Building in stealth',
-            hero_overline: 'STEALTH MODE',
-            hero_title_1: 'Engineering',
-            hero_title_2: 'the Invisible.',
-            hero_subtitle: 'We architect systems that power experiences people feel — but never see.',
-            hero_tag_1: 'Software Engineering',
-            hero_tag_2: 'Game Development',
-            hero_tag_3: 'Cloud Architecture',
-            phil_title_1: 'Precision Code',
-            phil_text_1: 'Scalable, maintainable systems engineered for the long run.',
-            phil_title_2: 'Immersive Worlds',
-            phil_text_2: 'Interactive experiences that blur the line between digital and tangible.',
-            phil_title_3: 'Cloud Native',
-            phil_text_3: 'Resilient architectures designed for zero downtime at any scale.',
-            signal_label: 'Transmission',
-            signal_quote: '"The best technology disappears. It becomes the medium through which extraordinary things happen."',
-            contact_title: 'Ready to build something?',
-            contact_subtitle: "We're selectively taking on projects that challenge the status quo.",
-            footer_copy: '© 2026 GIXS. All systems operational.'
-        },
+    document.documentElement.classList.add("js");
+
+    var translations = {
         es: {
-            nav_status: 'Construyendo en stealth',
-            hero_overline: 'MODO STEALTH',
-            hero_title_1: 'Ingeniería',
-            hero_title_2: 'de lo Invisible.',
-            hero_subtitle: 'Arquitectamos sistemas que potencian experiencias que la gente siente — pero nunca ve.',
-            hero_tag_1: 'Ingeniería de Software',
-            hero_tag_2: 'Desarrollo de Videojuegos',
-            hero_tag_3: 'Arquitectura Cloud',
-            phil_title_1: 'Código de Precisión',
-            phil_text_1: 'Sistemas escalables y mantenibles diseñados para el largo plazo.',
-            phil_title_2: 'Mundos Inmersivos',
-            phil_text_2: 'Experiencias interactivas que borran la línea entre lo digital y lo tangible.',
-            phil_title_3: 'Cloud Native',
-            phil_text_3: 'Arquitecturas resilientes diseñadas para cero tiempo de inactividad a cualquier escala.',
-            signal_label: 'Transmisión',
-            signal_quote: '"La mejor tecnología desaparece. Se convierte en el medio a través del cual suceden cosas extraordinarias."',
-            contact_title: '¿Listo para construir algo?',
-            contact_subtitle: 'Aceptamos selectivamente proyectos que desafían el status quo.',
-            footer_copy: '© 2026 GIXS. Todos los sistemas operativos.'
+            nav_ecosystem: "Ecosistema",
+            nav_suite: "Suite",
+            nav_contact: "Contacto",
+            hero_eyebrow: "Prelanzamiento privado",
+            hero_title: "GIXS",
+            hero_lede: "Un estudio luxury tech que orquesta soluciones digitales donde la ingenieria se encuentra con la creatividad.",
+            hero_cta: "Iniciar una conversacion",
+            hero_secondary: "Explorar ecosistema",
+            metric_one_label: "Focus",
+            metric_one_value: "Cloud, Apps, Games",
+            metric_two_label: "Modo",
+            metric_two_value: "Precision delivery",
+            metric_three_label: "Dominio",
+            brand_eyebrow: "Vision de marca",
+            brand_title: "Ingenieria silenciosa para productos que se sienten inevitables.",
+            brand_body: "GIXS nace como un ecosistema de innovacion para construir, depurar y escalar sistemas digitales con criterio tecnico y sensibilidad creativa. Menos ruido. Mas arquitectura. Mas oficio.",
+            ecosystem_eyebrow: "Ecosistema de servicios",
+            ecosystem_title: "Capacidades de alto nivel, presentadas como un solo sistema.",
+            service_cloud_title: "Cloud Consulting & Architecture",
+            service_cloud_body: "Infraestructura elegante, resiliente y preparada para crecer sin sobredimensionar complejidad.",
+            service_app_title: "High-End App Development",
+            service_app_body: "Aplicaciones premium con experiencia cuidada, codigo mantenible y rendimiento medible.",
+            service_game_title: "Game Design & Development",
+            service_game_body: "Showcase de titulos propios, mundos interactivos y prototipos jugables con identidad.",
+            service_debug_title: "Problem Solving & Strategic Debugging",
+            service_debug_body: "Diagnostico profundo para problemas criticos, regresiones invisibles y decisiones tecnicas bloqueadas.",
+            service_sap_title: "SAP ABAP Specialized Development",
+            service_sap_body: "Desarrollo especializado para entornos SAP donde estabilidad, trazabilidad y precision importan.",
+            suite_eyebrow: "Modelo de suscripcion",
+            suite_title: "Una suite premium para que las PYMES escalen con software propio sin cargar con un departamento completo.",
+            suite_body: "Aplicaciones modulares, soporte estrategico y mejoras continuas bajo una membresia mensual. Operacion, datos, automatizacion y experiencia de cliente trabajando como una sola capa de crecimiento.",
+            suite_item_one: "Operations OS",
+            suite_item_two: "Client Intelligence",
+            suite_item_three: "Workflow Automation",
+            suite_item_four: "Executive Dashboards",
+            contact_eyebrow: "Entrada privada",
+            contact_title: "Construyamos una ventaja que no parezca prestada.",
+            contact_body: "GIXS esta en fase de prelanzamiento. Las colaboraciones se abren de forma selectiva para proyectos con ambicion real y margen para hacer las cosas bien.",
+            footer_copy: "GIXS. Engineering systems with creative gravity."
+        },
+        en: {
+            nav_ecosystem: "Ecosystem",
+            nav_suite: "Suite",
+            nav_contact: "Contact",
+            hero_eyebrow: "Private prelaunch",
+            hero_title: "GIXS",
+            hero_lede: "A luxury tech studio orchestrating digital solutions where engineering meets creativity.",
+            hero_cta: "Start a conversation",
+            hero_secondary: "Explore ecosystem",
+            metric_one_label: "Focus",
+            metric_one_value: "Cloud, Apps, Games",
+            metric_two_label: "Mode",
+            metric_two_value: "Precision delivery",
+            metric_three_label: "Domain",
+            brand_eyebrow: "Brand vision",
+            brand_title: "Quiet engineering for products that feel inevitable.",
+            brand_body: "GIXS is an innovation ecosystem built to design, debug, and scale digital systems with technical judgment and creative sensitivity. Less noise. More architecture. More craft.",
+            ecosystem_eyebrow: "Service ecosystem",
+            ecosystem_title: "High-level capabilities, presented as one integrated system.",
+            service_cloud_title: "Cloud Consulting & Architecture",
+            service_cloud_body: "Elegant, resilient infrastructure ready to grow without inflating complexity.",
+            service_app_title: "High-End App Development",
+            service_app_body: "Premium applications with refined experience, maintainable code, and measurable performance.",
+            service_game_title: "Game Design & Development",
+            service_game_body: "A showcase of original titles, interactive worlds, and playable prototypes with identity.",
+            service_debug_title: "Problem Solving & Strategic Debugging",
+            service_debug_body: "Deep diagnosis for critical issues, invisible regressions, and blocked technical decisions.",
+            service_sap_title: "SAP ABAP Specialized Development",
+            service_sap_body: "Specialized development for SAP environments where stability, traceability, and precision matter.",
+            suite_eyebrow: "Subscription model",
+            suite_title: "A premium app suite for SMBs to scale with owned software without carrying a full department.",
+            suite_body: "Modular applications, strategic support, and continuous improvements under a monthly membership. Operations, data, automation, and customer experience working as one growth layer.",
+            suite_item_one: "Operations OS",
+            suite_item_two: "Client Intelligence",
+            suite_item_three: "Workflow Automation",
+            suite_item_four: "Executive Dashboards",
+            contact_eyebrow: "Private entry",
+            contact_title: "Let us build an advantage that does not feel rented.",
+            contact_body: "GIXS is in prelaunch. Collaborations open selectively for projects with real ambition and enough room to do things well.",
+            footer_copy: "GIXS. Engineering systems with creative gravity."
         }
     };
 
-    const commandsList = {
-        en: ['gixs init --stealth', 'deploying imagination...', 'npm run build:future', 'cloud.architect --scale=infinite', 'rendering new reality...'],
-        es: ['gixs init --stealth', 'desplegando imaginación...', 'npm run build:future', 'cloud.architect --scale=infinite', 'renderizando nueva realidad...']
-    };
-
-    let currentLang = 'en';
-    try {
-        currentLang = localStorage.getItem('gixs_lang') || 'en';
-    } catch (e) {
-        console.warn('Local storage is disabled or unavailable.');
-    }
-    
-    let commands = commandsList[currentLang];
-
-    function updateLanguage(lang) {
-        currentLang = lang;
-        try {
-            localStorage.setItem('gixs_lang', lang);
-        } catch (e) {}
-        
-        commands = commandsList[lang];
-        
-        document.querySelectorAll('[data-t]').forEach(el => {
-            const key = el.getAttribute('data-t');
-            if (translations[lang][key]) {
-                el.textContent = translations[lang][key];
-            }
-        });
-
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-        });
-
+    function setLanguage(lang) {
+        var dictionary = translations[lang] || translations.es;
         document.documentElement.lang = lang;
+        document.querySelectorAll("[data-t]").forEach(function (node) {
+            var key = node.getAttribute("data-t");
+            if (dictionary[key]) {
+                node.textContent = dictionary[key];
+            }
+        });
+        document.querySelectorAll(".lang-btn").forEach(function (button) {
+            button.classList.toggle("active", button.getAttribute("data-lang") === lang);
+        });
+        try {
+            localStorage.setItem("gixs_lang", lang);
+        } catch (error) {}
     }
 
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const lang = btn.getAttribute('data-lang');
-            if (lang !== currentLang) {
-                updateLanguage(lang);
-                charIndex = 0;
-                cmdIndex = 0;
-            }
+    var currentLanguage = "es";
+    try {
+        currentLanguage = localStorage.getItem("gixs_lang") || "es";
+    } catch (error) {}
+
+    document.querySelectorAll(".lang-btn").forEach(function (button) {
+        button.addEventListener("click", function () {
+            setLanguage(button.getAttribute("data-lang"));
         });
     });
+    setLanguage(currentLanguage);
 
-    // Initial load
-    updateLanguage(currentLang);
-
-    /* --- Cursor Glow --- */
-    const glow = document.getElementById('cursor-glow');
-    let mx = 0, my = 0, gx = 0, gy = 0;
-
-    document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
-
-    function animateGlow() {
-        gx += (mx - gx) * 0.08;
-        gy += (my - gy) * 0.08;
-        glow.style.transform = `translate(${gx - 300}px, ${gy - 300}px)`;
-        requestAnimationFrame(animateGlow);
-    }
-    if (window.matchMedia('(pointer: fine)').matches) animateGlow();
-
-    /* --- Particle System --- */
-    const canvas = document.getElementById('particle-canvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    const PARTICLE_COUNT = window.innerWidth < 768 ? 20 : 50;
-
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    class Particle {
-        constructor() { this.reset(); }
-        reset() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.vx = (Math.random() - 0.5) * 0.3;
-            this.vy = (Math.random() - 0.5) * 0.3;
-            this.size = Math.random() * 1.5 + 0.5;
-            this.alpha = Math.random() * 0.3 + 0.05;
-        }
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(167, 139, 250, ${this.alpha})`;
-            ctx.fill();
-        }
-    }
-
-    for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
-
-    function drawConnections() {
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 150) {
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(167, 139, 250, ${0.04 * (1 - dist / 150)})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.stroke();
-                }
-            }
-        }
-    }
-
-    function animateParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => { p.update(); p.draw(); });
-        drawConnections();
-        requestAnimationFrame(animateParticles);
-    }
-    animateParticles();
-
-    /* --- Scroll Reveal --- */
-    const revealElements = document.querySelectorAll('[data-reveal]');
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
+    var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-                setTimeout(() => entry.target.classList.add('revealed'), i * 120);
+                entry.target.classList.add("is-visible");
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-    revealElements.forEach(el => revealObserver.observe(el));
+    }, { threshold: 0.16, rootMargin: "0px 0px -40px 0px" });
 
-    /* --- Terminal Typing Effect --- */
-    const terminalText = document.querySelector('.terminal-text');
-    let cmdIndex = 0, charIndex = 0, isDeleting = false;
-
-    function typeCommand() {
-        const current = commands[cmdIndex];
-        if (!isDeleting) {
-            terminalText.textContent = current.substring(0, charIndex++);
-            if (charIndex > current.length) {
-                isDeleting = true;
-                setTimeout(typeCommand, 2000);
-                return;
-            }
-            setTimeout(typeCommand, 60 + Math.random() * 40);
-        } else {
-            terminalText.textContent = current.substring(0, charIndex--);
-            if (charIndex < 0) {
-                isDeleting = false;
-                cmdIndex = (cmdIndex + 1) % commands.length;
-                setTimeout(typeCommand, 500);
-                return;
-            }
-            setTimeout(typeCommand, 30);
-        }
-    }
-
-    /* Start typing when terminal is visible */
-    const terminalObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            typeCommand();
-            terminalObserver.disconnect();
-        }
-    }, { threshold: 0.5 });
-    const terminal = document.querySelector('.signal-terminal');
-    if (terminal) terminalObserver.observe(terminal);
-
-    /* --- Nav scroll effect --- */
-    const nav = document.getElementById('main-nav');
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        if (scrollY > 100) {
-            nav.style.borderBottomColor = 'rgba(255,255,255,0.08)';
-        } else {
-            nav.style.borderBottomColor = 'rgba(255,255,255,0.03)';
-        }
-        lastScroll = scrollY;
-    }, { passive: true });
-
-    /* --- Domain tag hover sound-like visual feedback --- */
-    document.querySelectorAll('.domain-tag').forEach(tag => {
-        tag.addEventListener('mouseenter', () => {
-            tag.style.transition = 'all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)';
-        });
+    document.querySelectorAll("[data-reveal]").forEach(function (node) {
+        revealObserver.observe(node);
     });
 
-    // Cleanup complete
+    var canvas = document.getElementById("signal-field");
+    var context = canvas && canvas.getContext("2d");
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!context || reduceMotion) {
+        return;
+    }
+
+    var width = 0;
+    var height = 0;
+    var points = [];
+
+    function resize() {
+        var ratio = window.devicePixelRatio || 1;
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = Math.floor(width * ratio);
+        canvas.height = Math.floor(height * ratio);
+        canvas.style.width = width + "px";
+        canvas.style.height = height + "px";
+        context.setTransform(ratio, 0, 0, ratio, 0, 0);
+        points = Array.from({ length: width < 720 ? 22 : 42 }, function () {
+            return {
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.18,
+                vy: (Math.random() - 0.5) * 0.18,
+                r: Math.random() * 1.4 + 0.5
+            };
+        });
+    }
+
+    function frame() {
+        context.clearRect(0, 0, width, height);
+        context.strokeStyle = "rgba(125,249,255,0.055)";
+        context.fillStyle = "rgba(248,251,255,0.38)";
+
+        points.forEach(function (point, index) {
+            point.x += point.vx;
+            point.y += point.vy;
+
+            if (point.x < -20) point.x = width + 20;
+            if (point.x > width + 20) point.x = -20;
+            if (point.y < -20) point.y = height + 20;
+            if (point.y > height + 20) point.y = -20;
+
+            context.beginPath();
+            context.arc(point.x, point.y, point.r, 0, Math.PI * 2);
+            context.fill();
+
+            for (var i = index + 1; i < points.length; i += 1) {
+                var other = points[i];
+                var dx = point.x - other.x;
+                var dy = point.y - other.y;
+                var distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 155) {
+                    context.globalAlpha = 1 - distance / 155;
+                    context.beginPath();
+                    context.moveTo(point.x, point.y);
+                    context.lineTo(other.x, other.y);
+                    context.stroke();
+                    context.globalAlpha = 1;
+                }
+            }
+        });
+
+        requestAnimationFrame(frame);
+    }
+
+    resize();
+    window.addEventListener("resize", resize, { passive: true });
+    frame();
 })();

@@ -1,138 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <script>!function(){var e=window.location;if(e.hostname.indexOf("onrender.com")!==-1){window.location.replace("https://gixs.dev"+e.pathname+e.search+e.hash)}}();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GIXS — Engineering the invisible. Software, games, and cloud architecture.">
-    <meta name="theme-color" content="#0a0a0f">
-    <meta property="og:title" content="GIXS — Engineering the Invisible">
-    <meta property="og:description" content="Software development, game engineering, and cloud architecture.">
+    <meta name="description" content="GIXS orquesta soluciones digitales donde la ingenieria se encuentra con la creatividad: cloud, apps premium, videojuegos, debugging estrategico y desarrollo SAP ABAP.">
+    <meta name="theme-color" content="#050608">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="GIXS - Luxury Tech Engineering Studio">
+    <meta property="og:description" content="Un ecosistema de innovacion para cloud architecture, high-end app development, game development, strategic debugging y SAP ABAP.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gixs.dev">
+    <meta property="og:url" content="https://gixs.dev/">
     <meta property="og:image" content="https://gixs.dev/logo.png">
-    <title>GIXS — Engineering the Invisible</title>
+    <meta name="twitter:card" content="summary_large_image">
+    <title>GIXS - Luxury Tech Engineering Studio</title>
+    <link rel="canonical" href="https://gixs.dev/">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="cursor-glow" aria-hidden="true"></div>
-    <canvas id="particle-canvas" aria-hidden="true"></canvas>
-
-    <nav id="main-nav">
-        <div class="nav-inner">
-            <a href="/" class="nav-logo" aria-label="GIXS Home">
-                <img src="logo.png" alt="GIXS" width="32" height="32" loading="eager">
-                <span class="nav-wordmark">GIXS</span>
+    <canvas id="signal-field" aria-hidden="true"></canvas>
+    <div class="page-shell">
+        <header class="site-header" data-reveal>
+            <a class="brand-mark" href="/" aria-label="GIXS Home">
+                <img src="logo.png" alt="GIXS" width="34" height="34" loading="eager">
+                <span>GIXS</span>
             </a>
-            <div class="nav-status">
-                <div class="lang-switch">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <span class="lang-divider">|</span>
-                    <button class="lang-btn" data-lang="es">ES</button>
-                </div>
-                <span class="status-dot"></span>
-                <span class="status-text" data-t="nav_status">Building in stealth</span>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="#ecosystem" data-t="nav_ecosystem">Ecosistema</a>
+                <a href="#suite" data-t="nav_suite">Suite</a>
+                <a href="#contact" data-t="nav_contact">Contacto</a>
+            </nav>
+            <div class="header-actions" aria-label="Language selector">
+                <button class="lang-btn active" type="button" data-lang="es">ES</button>
+                <button class="lang-btn" type="button" data-lang="en">EN</button>
             </div>
-        </div>
-    </nav>
+        </header>
 
-    <main>
-        <section id="hero" class="section hero-section">
-            <div class="hero-content">
-                <p class="hero-overline">
-                    <span class="overline-bracket">[</span>
-                    <span class="overline-text" data-t="hero_overline">STEALTH MODE</span>
-                    <span class="overline-bracket">]</span>
-                </p>
-                <h1 class="hero-title">
-                    <span class="title-line" data-t="hero_title_1">Engineering</span>
-                    <span class="title-line title-accent" data-t="hero_title_2">the Invisible.</span>
-                </h1>
-                <p class="hero-subtitle" data-t="hero_subtitle">We architect systems that power experiences people feel — but never see.</p>
-                <div class="hero-domains">
-                    <span class="domain-tag" data-index="0" data-t="hero_tag_1">Software Engineering</span>
-                    <span class="domain-separator">/</span>
-                    <span class="domain-tag" data-index="1" data-t="hero_tag_2">Game Development</span>
-                    <span class="domain-separator">/</span>
-                    <span class="domain-tag" data-index="2" data-t="hero_tag_3">Cloud Architecture</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="philosophy" class="section philosophy-section">
-            <div class="section-inner">
-                <div class="philosophy-grid">
-                    <div class="philosophy-card" data-reveal>
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <main>
+            <section class="hero-section" aria-labelledby="hero-title">
+                <div class="hero-grid">
+                    <div class="hero-copy" data-reveal>
+                        <p class="eyebrow" data-t="hero_eyebrow">Prelanzamiento privado</p>
+                        <h1 id="hero-title" data-t="hero_title">GIXS</h1>
+                        <p class="hero-lede" data-t="hero_lede">Un estudio luxury tech que orquesta soluciones digitales donde la ingenieria se encuentra con la creatividad.</p>
+                        <div class="hero-actions">
+                            <a class="primary-link" href="mailto:hola@gixs.dev" data-t="hero_cta">Iniciar una conversacion</a>
+                            <a class="secondary-link" href="#ecosystem" data-t="hero_secondary">Explorar ecosistema</a>
                         </div>
-                        <h3 class="card-title" data-t="phil_title_1">Precision Code</h3>
-                        <p class="card-text" data-t="phil_text_1">Scalable, maintainable systems engineered for the long run.</p>
                     </div>
-                    <div class="philosophy-card" data-reveal>
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
-                        </div>
-                        <h3 class="card-title" data-t="phil_title_2">Immersive Worlds</h3>
-                        <p class="card-text" data-t="phil_text_2">Interactive experiences that blur the line between digital and tangible.</p>
-                    </div>
-                    <div class="philosophy-card" data-reveal>
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-                        </div>
-                        <h3 class="card-title" data-t="phil_title_3">Cloud Native</h3>
-                        <p class="card-text" data-t="phil_text_3">Resilient architectures designed for zero downtime at any scale.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="signal" class="section signal-section">
-            <div class="section-inner">
-                <div class="signal-content" data-reveal>
-                    <p class="signal-label" data-t="signal_label">Transmission</p>
-                    <blockquote class="signal-quote" data-t="signal_quote">"The best technology disappears. It becomes the medium through which extraordinary things happen."</blockquote>
-                    <div class="signal-terminal">
-                        <div class="terminal-header">
-                            <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
-                        </div>
-                        <div class="terminal-body">
-                            <p class="terminal-line">
-                                <span class="terminal-prompt">$</span>
-                                <span class="terminal-text"></span>
-                                <span class="terminal-cursor">▊</span>
-                            </p>
+                    <div class="hero-art" data-reveal aria-hidden="true">
+                        <div class="orbital-frame">
+                            <div class="core-glyph">
+                                <img src="logo.png" alt="">
+                            </div>
+                            <span class="orbit orbit-one"></span>
+                            <span class="orbit orbit-two"></span>
+                            <span class="orbit orbit-three"></span>
+                            <span class="node node-a"></span>
+                            <span class="node node-b"></span>
+                            <span class="node node-c"></span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+                <dl class="signal-strip" aria-label="GIXS capabilities" data-reveal>
+                    <div>
+                        <dt data-t="metric_one_label">Focus</dt>
+                        <dd data-t="metric_one_value">Cloud, Apps, Games</dd>
+                    </div>
+                    <div>
+                        <dt data-t="metric_two_label">Modo</dt>
+                        <dd data-t="metric_two_value">Precision delivery</dd>
+                    </div>
+                    <div>
+                        <dt data-t="metric_three_label">Dominio</dt>
+                        <dd>gixs.dev</dd>
+                    </div>
+                </dl>
+            </section>
 
-        <section id="contact" class="section contact-section">
-            <div class="section-inner">
-                <div class="contact-content" data-reveal>
-                    <h2 class="contact-title" data-t="contact_title">Ready to build something?</h2>
-                    <p class="contact-subtitle" data-t="contact_subtitle">We're selectively taking on projects that challenge the status quo.</p>
-                    <a href="mailto:hola@gixs.dev" id="contact-cta" class="cta-button">
-                        <span class="cta-text">hola@gixs.dev</span>
-                        <span class="cta-arrow">→</span>
-                    </a>
+            <section class="brand-section section-block" aria-labelledby="brand-title">
+                <div class="section-kicker" data-reveal>01</div>
+                <div class="section-copy" data-reveal>
+                    <p class="eyebrow" data-t="brand_eyebrow">Vision de marca</p>
+                    <h2 id="brand-title" data-t="brand_title">Ingenieria silenciosa para productos que se sienten inevitables.</h2>
+                    <p data-t="brand_body">GIXS nace como un ecosistema de innovacion para construir, depurar y escalar sistemas digitales con criterio tecnico y sensibilidad creativa. Menos ruido. Mas arquitectura. Mas oficio.</p>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <footer id="main-footer">
-        <div class="footer-inner">
-            <p class="footer-copyright" data-t="footer_copy">© 2026 GIXS. All systems operational.</p>
-            <a href="https://github.com/Gio1985" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-link">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            </a>
-        </div>
-    </footer>
+            <section id="ecosystem" class="ecosystem-section section-block" aria-labelledby="ecosystem-title">
+                <div class="section-copy" data-reveal>
+                    <p class="eyebrow" data-t="ecosystem_eyebrow">Ecosistema de servicios</p>
+                    <h2 id="ecosystem-title" data-t="ecosystem_title">Capacidades de alto nivel, presentadas como un solo sistema.</h2>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card" data-reveal>
+                        <span>01</span>
+                        <h3 data-t="service_cloud_title">Cloud Consulting &amp; Architecture</h3>
+                        <p data-t="service_cloud_body">Infraestructura elegante, resiliente y preparada para crecer sin sobredimensionar complejidad.</p>
+                    </article>
+                    <article class="service-card" data-reveal>
+                        <span>02</span>
+                        <h3 data-t="service_app_title">High-End App Development</h3>
+                        <p data-t="service_app_body">Aplicaciones premium con experiencia cuidada, codigo mantenible y rendimiento medible.</p>
+                    </article>
+                    <article class="service-card featured-card" data-reveal>
+                        <span>03</span>
+                        <h3 data-t="service_game_title">Game Design &amp; Development</h3>
+                        <p data-t="service_game_body">Showcase de titulos propios, mundos interactivos y prototipos jugables con identidad.</p>
+                    </article>
+                    <article class="service-card" data-reveal>
+                        <span>04</span>
+                        <h3 data-t="service_debug_title">Problem Solving &amp; Strategic Debugging</h3>
+                        <p data-t="service_debug_body">Diagnostico profundo para problemas criticos, regresiones invisibles y decisiones tecnicas bloqueadas.</p>
+                    </article>
+                    <article class="service-card" data-reveal>
+                        <span>05</span>
+                        <h3 data-t="service_sap_title">SAP ABAP Specialized Development</h3>
+                        <p data-t="service_sap_body">Desarrollo especializado para entornos SAP donde estabilidad, trazabilidad y precision importan.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="suite" class="suite-section" aria-labelledby="suite-title">
+                <div class="suite-panel" data-reveal>
+                    <p class="eyebrow" data-t="suite_eyebrow">Modelo de suscripcion</p>
+                    <h2 id="suite-title" data-t="suite_title">Una suite premium para que las PYMES escalen con software propio sin cargar con un departamento completo.</h2>
+                    <p data-t="suite_body">Aplicaciones modulares, soporte estrategico y mejoras continuas bajo una membresia mensual. Operacion, datos, automatizacion y experiencia de cliente trabajando como una sola capa de crecimiento.</p>
+                    <div class="suite-stack" aria-label="Premium apps suite">
+                        <span data-t="suite_item_one">Operations OS</span>
+                        <span data-t="suite_item_two">Client Intelligence</span>
+                        <span data-t="suite_item_three">Workflow Automation</span>
+                        <span data-t="suite_item_four">Executive Dashboards</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact-section section-block" aria-labelledby="contact-title">
+                <div class="section-copy" data-reveal>
+                    <p class="eyebrow" data-t="contact_eyebrow">Entrada privada</p>
+                    <h2 id="contact-title" data-t="contact_title">Construyamos una ventaja que no parezca prestada.</h2>
+                    <p data-t="contact_body">GIXS esta en fase de prelanzamiento. Las colaboraciones se abren de forma selectiva para proyectos con ambicion real y margen para hacer las cosas bien.</p>
+                    <a class="primary-link" href="mailto:hola@gixs.dev">hola@gixs.dev</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p data-t="footer_copy">GIXS. Engineering systems with creative gravity.</p>
+            <a href="https://github.com/Gio1985" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+    </div>
 
     <script src="main.js" defer></script>
 </body>
